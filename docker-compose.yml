@@ -7,4 +7,14 @@ services:
     ports:
       - "8080:8080"
     env_file:
-      - .env.pro
+      - .env.prod
+  
+  database:
+    image: mongo
+    ports:
+      - "27017"
+    volumes:
+      - data:/data/db
+
+volumes:
+  data:
