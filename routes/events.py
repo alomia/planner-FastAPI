@@ -20,7 +20,7 @@ async def retrieve_all_events() -> List[Event]:
 
 
 @event_router.get("/{id}")
-async def retrieve_all_events(id: PydanticObjectId) -> Event:
+async def retrieve_event(id: PydanticObjectId) -> Event:
     event = await event_database.get(id)
     if not event:
         raise HTTPException(
